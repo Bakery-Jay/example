@@ -42,3 +42,6 @@ URL: http://localhost:8081/h2-console
 登入後:
 ![設定4](https://user-images.githubusercontent.com/16308309/114280190-b9d6b900-9a6a-11eb-8261-d240255364f0.jpg)
 
+----
+### `程式`
+程式流程為: Controller => Service => RepositoryFactory => Repository
