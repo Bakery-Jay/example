@@ -3,7 +3,9 @@
 練習用
 
 
-啟動server後 網址 : http://localhost:8081/index
+啟動application後 輸入url : http://localhost:8081/index 後會看到以下畫面
+![設定0](https://user-images.githubusercontent.com/16308309/114280564-73825980-9a6c-11eb-8a95-92b55f4a6709.jpg)
+
 
 ----
 
@@ -54,3 +56,4 @@ AOP: 範例為求請開始與結束會記錄Log
 	public void pointcut() {
 	}
   ```
+* `Poincut`: 指定橫切點為某個com.example.demo.controller這個packge底下任何Controller的所有method
