@@ -48,7 +48,7 @@ URL: http://localhost:8081/h2-console
 ### `程式`
 程式流程為: Controller => Service => RepositoryFactory => Repository
 
-AOP: 範例為求請開始與結束會記錄Log
+1. AOP: 範例為求請開始與結束會記錄Log
 
 ``` java
 	@Pointcut("execution(* com.example.demo.controller..*(..))")
@@ -89,3 +89,23 @@ AOP: 範例為求請開始與結束會記錄Log
 ```
 * `Before`: Before Advice，會在controller的method之前先執行
 * `After`: After Advice，會在controller的method執行結束後才執行
+
+2. Transactional 
+詳細請看: https://openhome.cc/Gossip/JavaGossip-V2/Transaction.htm
+
+``` java
+	@Transactional
+	public void addBook(Book book) {
+		
+		try {
+			repositoryFactory.getBookRepository().save(book);
+			
+			throw new RuntimeException("error");
+		}catch(RuntimeException e) {
+			
+			System.out.println("新增失敗");
+		}
+	}
+```
+
+* `Transactional`: 當使用這個標籤後，若程式發生例外時會將資料rollback回原本的狀態
