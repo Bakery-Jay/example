@@ -50,10 +50,42 @@ URL: http://localhost:8081/h2-console
 
 AOP: 範例為求請開始與結束會記錄Log
 
-1. 
 ``` java
 	@Pointcut("execution(* com.example.demo.controller..*(..))")
 	public void pointcut() {
 	}
   ```
 * `Poincut`: 指定橫切點為某個com.example.demo.controller這個packge底下任何Controller的所有method
+
+
+``` java
+	@Before("pointcut()")
+	public void before(JoinPoint joinPoint) {
+		Logger logger = LoggerFactory.getLogger(joinPoint.getTarget().getClass().getName());
+
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+				.getRequest();
+
+		String URI = request.getRequestURI().substring(request.getContextPath().length());
+		String methodName = joinPoint.getSignature().getName();
+
+		logger.info("請求開始 : URI = {}, Method = {} ", URI, methodName);
+	}
+	
+		@After("pointcut()")
+	public void after(JoinPoint joinPoint) {
+		Logger logger = LoggerFactory.getLogger(joinPoint.getTarget().getClass().getName());
+
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+				.getRequest();
+
+		String URI = request.getRequestURI().substring(request.getContextPath().length());
+		String methodName = joinPoint.getSignature().getName();
+
+		logger.info("請求結束 :  URI = {}, Method = {} ", URI, methodName);
+
+	}
+
+```
+* `Before`: Before Advice，會在controller的method之前先執行
+* `After`: After Advice，會在controller的method執行結束後才執行
