@@ -45,3 +45,12 @@ URL: http://localhost:8081/h2-console
 ----
 ### `程式`
 程式流程為: Controller => Service => RepositoryFactory => Repository
+
+AOP: 範例為求請開始與結束會記錄Log
+
+1. 
+``` java
+	@Pointcut("execution(* com.example.demo.controller..*(..))")
+	public void pointcut() {
+	}
+  ```
