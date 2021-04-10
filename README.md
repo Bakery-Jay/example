@@ -7,7 +7,7 @@
 
 ----
 
-### `package`
+### `目錄結構`
 
 ![設定2](https://user-images.githubusercontent.com/16308309/114278819-15517880-9a64-11eb-8a90-c1c83967efa3.jpg)
 
@@ -18,7 +18,7 @@
 5. templates: view，是html、jsp....等，預設存放的位置。此範例使用的是thymeleaf
 
 
-### `server屬性配置`
+### `Application屬性配置`
 ![設定1](https://user-images.githubusercontent.com/16308309/114278378-184b6980-9a62-11eb-9b37-1733b8da1764.jpg)
 
 1. server.port: 預設為8080，可以自定義port
