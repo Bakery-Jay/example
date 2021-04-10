@@ -97,9 +97,9 @@ URL: http://localhost:8081/h2-console
 	@Transactional
 	public void addBook(Book book) {
 		
-			repositoryFactory.getBookRepository().save(book);
+		repositoryFactory.getBookRepository().save(book);
 			
-			throw new RuntimeException("error");
+		throw new RuntimeException("error");
 		
 	}
 ```
