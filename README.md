@@ -22,7 +22,7 @@
 ![設定1](https://user-images.githubusercontent.com/16308309/114278378-184b6980-9a62-11eb-9b37-1733b8da1764.jpg)
 
 1. server.port: 預設為8080，可以自定義port
-2. spring.jpa.hibernate.ddl-auto: 資料庫ddl(Data Definition Language)，有create, update, create-drop, validate, none。範例使用的為update = 每次啟動application時會依照entity的設定更新資料庫schema 
+2. spring.jpa.hibernate.ddl-auto: 資料庫ddl(Data Definition Language)，有create, update, create-drop, validate, none。範例使用的為update。update為每次啟動application時會依照entity的設定更新資料庫schema
 3. spring.h2.console.enabled: 設為true可以使用web console進行操作
 4. spring.datasource.url: 連到資料庫的URL
 5. spring.datasource.driverClassName: 資料庫JDBC驅動程式
