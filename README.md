@@ -38,3 +38,7 @@ URL: http://localhost:8081/h2-console
 ![設定3](https://user-images.githubusercontent.com/16308309/114279973-c1e22900-9a69-11eb-97c3-0585dabe006a.jpg)
 
 畫面中Driver Class、JDBC URL、帳號密碼等: 會是前面application.properties所設定的值
+
+登入後:
+![設定4](https://user-images.githubusercontent.com/16308309/114280190-b9d6b900-9a6a-11eb-8261-d240255364f0.jpg)
+
