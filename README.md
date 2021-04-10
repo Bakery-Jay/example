@@ -29,3 +29,7 @@
 6. spring.datasource.username: 資料庫帳號
 7. spring.datasource.password: 資料庫密碼
 8. spring.jpa.database-platform: 設定JPA要使用哪一種資料庫
+
+
+### `h2 web console`
+URL: http://localhost:8081/h2-console
