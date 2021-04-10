@@ -630,3 +630,6 @@ org.h2.message.DbException: Wrong user name or password [28000-196]
 Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-196]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 53 more
+2021-04-11 02:18:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DELETE *[*] FROM BOOK "; expected "identifier"; SQL statement:
+delete * from book [42001-196]

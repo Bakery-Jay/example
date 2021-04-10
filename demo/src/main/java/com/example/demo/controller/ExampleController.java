@@ -39,7 +39,14 @@ public class ExampleController {
 	@PostMapping("/add")
 	public String add(@ModelAttribute Book book){
 		
-		exampleService.addBook(book);
+		try {
+			exampleService.addBook(book);
+			
+		}catch(RuntimeException e) {
+			
+			System.out.println("新增失敗");
+		}
+		
 		
 		return "redirect:/index";
 	}

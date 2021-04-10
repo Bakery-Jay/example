@@ -14,7 +14,7 @@ import com.example.demo.service.ExampleService;
 @Service
 
 public class ExampleServiceImpl implements ExampleService {
-	
+
 	@Autowired
 	private RepositoryFactory repositoryFactory;
 
@@ -26,17 +26,12 @@ public class ExampleServiceImpl implements ExampleService {
 	@Override
 	@Transactional
 	public void addBook(Book book) {
-		
+
 		repositoryFactory.getBookRepository().save(book);
-		
-		//測試 rollback
-//		try {
-//			repositoryFactory.getBookRepository().save(book);
-//			
-//			throw new RuntimeException("error");
-//		}catch(RuntimeException e) {
-//			
-//			System.out.println("新增失敗");
-//		}
+
+		// 測試 rollback
+//		repositoryFactory.getBookRepository().save(book);
+//		throw new RuntimeException("error");
+
 	}
 }
