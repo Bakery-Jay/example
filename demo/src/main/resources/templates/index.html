@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Example</title>
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+	
+	<div>
+		<table border="1">
+			<thead>
+				<tr>
+	                <th>書名</th>
+	                <th>作者</th>
+	            </tr>
+	         
+			</thead>
+			<tbody th:each="book: ${books}">
+				<tr>
+		            <td th:text="${book.name}"></td>
+		            <td th:text="${book.author}"></td>
+	            </tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<br>
+	<hr>
+	
+	<div>
+		<span>書本新增</span>
+		<form th:action="@{/add}" method="POST">
+		書名: <input type="text" name="name">
+		
+		作者: <input type="text" name="author">
+		
+		<input type="submit" value="確定" >
+		</form>
+	</div>
+	
+</body>
+</html>
